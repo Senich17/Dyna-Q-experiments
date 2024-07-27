@@ -19,6 +19,7 @@
 ### Реализация
 
 В наглядном варианте эксперименты отражены в ноутбуке
+[https://colab.research.google.com/drive/1-kwpRWv1ubuwV98j0D9T8_qllLc50-JU?usp=sharing]
 
 ### Визуализация
 
