@@ -1,52 +1,52 @@
 # Dyna-Q-experiments
 
-# Реализация и анализ алгоритма Dyna на детерминированной и стохастической среде
+# Implementation and analysis of the Dyna algorithm in a deterministic and stochastic environment
 
-### Детерминированная среда:
+### Deterministic environment:
 
-• Реализация табличного алгоритма Dyna.
+• Implementation of the Dyna tabular algorithm.
 
-• Тестирование Dyna с различным количеством шагов планирования начиная с 0 (которое соответствует обычному Q-обучению).
+• Dyna testing with a different number of planning steps starting from 0 (which corresponds to regular Q-learning).
 
-• Сравнение результатов в виде графиков суммарного вознаграждения и времени обучения для каждого значения шагов планирования.
+• Comparison of results in the form of graphs of total remuneration and training time for each value of planning steps.
 
-### Стохастическая среда:
+### Stochastic environment:
 
-• Модификация среды, чтобы она стала стохастической, удостоверившись, что нескольких состояний существует как минимум два состояния с ненулевой вероятностью перехода.
+• Modification of the environment so that it becomes stochastic, making sure that there are at least two states with a non-zero probability of transition.
 
-• Адаптация алгоритма Dyna для учета стохастичности среды.
+• Adaptation of the Dyna algorithm to account for the stochasticity of the environment.
 
-### Реализация
+### Implementation
 
-В наглядном варианте эксперименты отражены в ноутбуке
+In a visual version, the experiments are reflected in the laptop
 [https://colab.research.google.com/drive/1-kwpRWv1ubuwV98j0D9T8_qllLc50-JU?usp=sharing]
 
-### Визуализация
+### Visualization
 
 [https://wandb.ai/senich17/Dune-Q%20I?nw=nwusersenich17]
 
-## Вывод основанный на результатах исследования 
+## Conclusion based on the results of the study 
 
-### Дримминг как cтратегия
+### Dreaming as a strategy
 
-• Как и стратегия, дримминг направлен на долгосрочное планирование и обобщение знаний. Это помогает агенту развивать более глубокое понимание среды и вырабатывать оптимальные стратегии для достижения долгосрочных целей (например не набор очков за шаг, а победа в игре как таковой).После завершения нескольких эпизодов игры агент переходит в режим дримминга. Он использует все накопленные данные для симуляции множества переходов и обновления Q-значений.
+• Like a strategy, dreaming is aimed at long-term planning and generalization of knowledge. This helps the agent develop a deeper understanding of the environment and develop optimal strategies to achieve long-term goals (for example, not scoring points per step, but winning the game as such).After completing several episodes of the game, the agent switches to the dream mode. It uses all the accumulated data to simulate multiple transitions and update Q-values.
 
-• Используется обычно в периоды бездействия или после завершения эпизодов. Это позволяет агенту уделять время на "обдумывание" и анализ большого объема данных.
+• It is usually used during periods of inactivity or after the end of episodes. This allows the agent to devote time to "thinking" and analyzing a large amount of data.
 
-• В конечном итоге это позволяет агенту выявить долгосрочные паттерны и стратегии, которые помогут ему лучше справляться с игрой в целом.
+• Ultimately, this allows the agent to identify long-term patterns and strategies that will help him better handle the game as a whole.
 
-### Планирование как тактика
+### Planning as a tactic
 
-• Подобно тактике, планирование фокусируется на краткосрочных действиях и адаптации к текущим условиям. Это помогает агенту быстро реагировать на изменения в среде и оптимизировать свои действия в ближайшей перспективе (набор очков за каждый шаг, в моменте).
+• Like tactics, planning focuses on short-term actions and adaptation to current conditions. This helps the agent to react quickly to changes in the environment and optimize their actions in the short term (a set of points for each step, in a moment).
 
-• Используется регулярно, например, после каждого шага или набора шагов. Частое обновление Q-значений позволяет агенту оперативно корректировать свои действия.
+• Used regularly, for example, after each step or set of steps. Frequent updating of Q-values allows the agent to quickly adjust their actions.
 
-• Целью является улучшение текущих решений и поведения на основе последних полученных данных.
+• The goal is to improve current decisions and behavior based on the latest data received.
 
-### Итог
+### The result
 
-• Планирование (тактический подход) помогает агенту быстро и эффективно реагировать на текущие вызовы и условия, оптимизируя его действия в краткосрочной перспективе. Агент играет в игру и после каждого действия, например, делает 5 шагов планирования. Он использует модель для симуляции ближайших переходов и обновления Q-значений.
+• Planning (tactical approach) helps the agent to respond quickly and effectively to current challenges and conditions, optimizing his actions in the short term. The agent plays a game and after each action, for example, takes 5 planning steps. It uses a model to simulate nearby transitions and update Q-values.
 
-• Дримминг (стратегический подход) позволяет агенту обобщать накопленный опыт и вырабатывать оптимальные стратегии для достижения долгосрочных целей.
+• A strategic approach allows the agent to summarize the accumulated experience and develop optimal strategies to achieve long-term goals.
 
-• Использование обоих подходов в Dyna-Q помогает создать сбалансированного агента, который может эффективно действовать как в краткосрочной, так и в долгосрочной перспективе.
+• Using both approaches in Dyna-Q helps to create a balanced agent that can act effectively in both the short and long term.
